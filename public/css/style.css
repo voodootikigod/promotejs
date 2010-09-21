@@ -9,4 +9,4 @@ footer { margin-top: 20px; border-top: 1px solid #414141; padding-top: 10px}
 #promo-code { text-align: center}
 #promo-code h3 { text-align: left; }
 a, a:visited, a:link { color:#b81912; font-weight: bold;}
-.employer { visibility:none;}
+.employer { visibility:hidden;}
