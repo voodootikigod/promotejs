@@ -27,8 +27,8 @@ for (var i in global_objects) {
 
 
 var images = [
-    ["http://static.jsconf.us/promotejsv.png", "280", "160"],
-    ["http://static.jsconf.us/promotejsh.png", "150", "180"]
+    ["http://static.jsconf.us/promotejsvs.png", "280", "160"],
+    ["http://static.jsconf.us/promotejshs.png", "150", "180"]
 ];
 
 
