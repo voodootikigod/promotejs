@@ -26,6 +26,11 @@ for (var i in global_objects) {
 }
 
 
+var images = [
+    ["http://static.jsconf.us/promotejs.png", "200", "200"]
+];
+
+
 // can add any other SEO string -> URL combinations here.
 
 
@@ -53,10 +58,16 @@ app.get('/', function(req, res){
         href_string = combo[1];
     }
 
+    var img = images[Math.floor(Math.random()*images.length)];
+    
+
     res.render('index.ejs', {
         locals: {
             alt: alt_string,
-            href: href_string
+            href: href_string,
+            src: img[0],
+            height: img[1],
+            width: img[2]
         }
     });
 });
