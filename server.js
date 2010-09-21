@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var connect = require("connect");
 var express = require("express");
 
