@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var connect = require("connect");
 var express = require("express");
 
@@ -72,5 +73,4 @@ app.get('/', function(req, res){
     });
 });
 
-app.listen(3000);
-console.log('Server running at http://127.0.0.1:3000/');
+app.listen(80);
