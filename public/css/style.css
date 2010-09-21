@@ -2,9 +2,10 @@ body { background: #303030; padding:0px; margin:0px; text-align:center; }
 #container { width: 650px; background: #FFF; border-right: 1px solid #414141; padding: 20px; height: 100%; text-align: left; margin: 0px auto;}
 h1 { font-size: 60px; color: #EE651A; padding: 0px; margin-bottom: 6px; margin-top: 0px; text-align: center; }
 h2 { text-align: center; margin-top: 0px; padding:0px; margin-bottom:12px;  }
-p { line-height: 1.5; }
+p { line-height: 1.5; font-size: 0.9em;}
 textarea { background-color: white;border: 1px solid #CCC;border-bottom-left-radius: 4px 4px;border-bottom-left-radius: 4px 4px;border-bottom-right-radius: 4px 4px;border-bottom-right-radius: 4px 4px;border-top-left-radius: 4px 4px;border-top-left-radius: 4px 4px;border-top-right-radius: 4px 4px;border-top-right-radius: 4px 4px;font-size: 12px;padding: 6px; font-family:sans-serif;display: block;height: 75px;margin: 1.5em 0px 0px;padding: 6px;width: 635px; }
 textarea:hover { -webkit-transition: border 0.2s linear, -webkit-box-shadow 0.2s linear; border: 1px solid #AAA; }
 footer { margin-top: 20px; border-top: 1px solid #414141; padding-top: 10px}
 #promo-code { text-align: center}
 #promo-code h3 { text-align: left; }
+a, a:visited, a:link { color:#b81912; font-weight: bold;}
