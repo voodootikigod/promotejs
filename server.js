@@ -36,6 +36,10 @@ var images = [
     ["http://static.jsconf.us/promotejsh.gif", "150", "180"]
 ];
 
+combinations.push(["Learning JavaScript with Object Graphs", "http://howtonode.org/object-graphs"]);
+combinations.push(["In Search of JavaScript Developers: A Gist", "http://blog.rebeccamurphey.com/in-search-of-javascript-developers-a-gist"]);
+combinations.push(["On Rolling Your Own", "http://blog.rebeccamurphey.com/on-rolling-your-own"]);
+
 
 // can add any other SEO string -> URL combinations here.
 
