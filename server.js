@@ -78,4 +78,4 @@ app.get('/', function(req, res){
     });
 });
 
-app.listen(80);
+app.listen(process.env.NODE_PORT || 80);
