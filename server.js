@@ -8,7 +8,9 @@ var global_objects = {
     "RegExp": ["constructor", "global", "ignoreCase", "lastIndex", "multiline", "source", "exec", "test", "toString", "Example: Using a regular expression to change data format", "Example: Using a regular expression with the sticky flag"],
     "Function": ["prototype", "arguments", "arity", "constructor", "length", "apply", "call", "toString", "Example: Specifying arguments with the Function constructor"]
 };
-
+String.prototype.trim = function()  {
+  return String(this).replace(/^\s+|\s+$/g, '');
+};
 
 
 var combinations = [];
@@ -21,7 +23,10 @@ for (var i in global_objects) {
         if (val.indexOf(" ") < 0) {
             seo_string = seo_string.concat([", JS ",i, " .",val,", JavaScript ", i, " .", val]);
         }
-        combinations.push([seo_string.join(""), "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/"+i]);
+        
+        seo_string.join("").split(",").forEach(function(elem, idx) {
+          combinations.push([elem.trim(), "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/"+i]);
+        });
     }
 }
 
