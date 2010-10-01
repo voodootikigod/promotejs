@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+        <loc>http://promotejs.com/</loc>
+        <image:image>
+            <image:loc>http://static.jsconf.us/promotejsv.gif</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>http://static.jsconf.us/promotejsh.gif</image:loc>
+        </image:image>
+        <lastmod>2010-10-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+     </url>  
+</urlset>
