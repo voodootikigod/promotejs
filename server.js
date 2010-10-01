@@ -54,13 +54,16 @@ app.set('views', __dirname + '/views');
 
 var counter = 0;
 
+var tutorial_options = ["JS Tutorial", "JavaScript Tutorial", "JavaScript Guide", "Learn JavaScript JS", "How To Learn JS", "Learning JavaScript"];
+var reference_options = ["JavaScript Reference", "JavaScript Guide", "JavaScript API", "JS API", "JS Guide", "JS Reference", "Learn JS", "JS Documentation"];
+
 app.get('/', function(req, res){
     counter += 1;
         
-    var alt_string = "JS Tutorial, JavaScript Tutorial, JavaScript Guide, Learn JavaScript JS, How To Learn JS, Learning JavaScript";
+    var alt_string = tutorial_options[Math.floor(Math.random()*tutorial_options.length)];
     var href_string = "https://developer.mozilla.org/en/JavaScript/Guide";
     if (counter % 10 == 0) {
-        alt_string = "JavaScript Reference, JavaScript Guide, JavaScript API, JS API, JS Guide, JS Reference, Learn JS, JS Documentation";
+        alt_string = reference_options[Math.floor(Math.random()*reference_options.length)];
         href_string = "https://developer.mozilla.org/en/JavaScript";
     } else if (counter % 5 != 0) {
         var combo = combinations[Math.floor(Math.random()*combinations.length)];
