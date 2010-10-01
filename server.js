@@ -19,7 +19,7 @@ for (var i in global_objects) {
     var attrs = global_objects[i];
     for (var idx in attrs) {
         var val = attrs[idx];
-        var seo_string = ["JavaScript JS Documentation: JS ",i," ",val,", JavaScript ", i, " ", val];
+        var seo_string = ["JS ",i," ",val,", JavaScript ", i, " ", val];
         if (val.indexOf(" ") < 0) {
             seo_string = seo_string.concat([", JS ",i, " .",val,", JavaScript ", i, " .", val]);
         }
