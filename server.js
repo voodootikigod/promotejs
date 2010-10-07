@@ -38,7 +38,8 @@ var images = [
 
 combinations.push(["Learning JavaScript with Object Graphs", "http://howtonode.org/object-graphs"]);
 combinations.push(["In Search of JavaScript Developers: A Gist", "http://blog.rebeccamurphey.com/in-search-of-javascript-developers-a-gist"]);
-combinations.push(["On Rolling Your Own", "http://blog.rebeccamurphey.com/on-rolling-your-own"]);
+combinations.push(["On Rolling Your Own, Enterprise jQuery, Enterprise JavaScript, Enterprise JS", "http://blog.rebeccamurphey.com/on-rolling-your-own"]);
+combinations.push(["Proper JS, Proper JavaScript Training, JS Tutorial, Learning JS, Eloquent JavaScript, Eloquent JS, JS Data Structures, JS DOM", "http://eloquentjavascript.net"]);
 
 
 // can add any other SEO string -> URL combinations here.
