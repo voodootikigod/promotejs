@@ -36,10 +36,12 @@ var images = [
     ["http://static.jsconf.us/promotejsh.gif", "150", "180"]
 ];
 
+combinations.push(["JS Screencasts, Learn JS, JS Videos, JavaScript Screencasts, JS Education, JS Training, Proper JS", "http://learnjs.org"]);
 combinations.push(["Learning JavaScript with Object Graphs", "http://howtonode.org/object-graphs"]);
 combinations.push(["In Search of JavaScript Developers: A Gist", "http://blog.rebeccamurphey.com/in-search-of-javascript-developers-a-gist"]);
 combinations.push(["On Rolling Your Own, Enterprise jQuery, Enterprise JavaScript, Enterprise JS", "http://blog.rebeccamurphey.com/on-rolling-your-own"]);
 combinations.push(["Proper JS, Proper JavaScript Training, JS Tutorial, Learning JS, Eloquent JavaScript, Eloquent JS, JS Data Structures, JS DOM", "http://eloquentjavascript.net"]);
+combinations.push(["jQuery, jQuery Fundamantals, JS Fundamentals, JS jQuery, Learn jQuery, jQuery done right, Best jQuery Tutorial, best jQuery training", "http://jqfundamentals.com/book/book.html"]);
 
 
 // can add any other SEO string -> URL combinations here.
