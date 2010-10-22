@@ -60,6 +60,23 @@ var counter = 0;
 var tutorial_options = ["JS Tutorial", "JavaScript Tutorial", "JavaScript Guide", "Learn JavaScript JS", "How To Learn JS", "Learning JavaScript"];
 var reference_options = ["JavaScript Reference", "JavaScript Guide", "JavaScript API", "JS API", "JS Guide", "JS Reference", "Learn JS", "JS Documentation"];
 
+
+app.get("/plz.json", function (req, res) {
+    var alt_string = tutorial_options[Math.floor(Math.random()*tutorial_options.length)];
+    var href_string = "https://developer.mozilla.org/en/JavaScript/Guide";
+    if (counter % 10 == 0) {
+        alt_string = reference_options[Math.floor(Math.random()*reference_options.length)];
+        href_string = "https://developer.mozilla.org/en/JavaScript";
+    } else if (counter % 5 != 0) {
+        var combo = combinations[Math.floor(Math.random()*combinations.length)];
+        alt_string = combo[0];
+        href_string = combo[1];
+    }
+    var img = images[Math.floor(Math.random()*images.length)];
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.sendBody(JSON.stringify({alt: alt_string, href: href_string, src: img[0], height: img[1], width: img[2]}));
+})
+
 app.get('/', function(req, res){
     counter += 1;
         
