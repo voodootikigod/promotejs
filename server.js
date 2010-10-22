@@ -1,6 +1,6 @@
 var connect = require("connect");
 var express = require("express");
-
+var sys = require("sys");
 var global_objects = {
     "Array": ["isArray", "constructor", "index", "input", "length", "pop", "push", "reverse", "shift", "sort", "splice", "unshift", "concat", "join", "slice", "toString", "indexOf", "lastIndexOf", "forEach", "map", "some", "every", "filter", "Creating an Array", "Example: Creating a Two-dimensional Array"],
     "String": ["prototype", "fromCharCode", "constructor", "length", "charAt", "concat", "indexOf", "lastIndexOf", "localeCompare", "match", "replace", "search", "slice", "split", "substr", "substring", "toLocaleLowerCase", "toLocaleUpperCase","toLowerCase", "toString", "toUpperCase", "valueOf"],
@@ -13,10 +13,13 @@ String.prototype.trim = function()  {
 };
 
 
+var api_targets = {};
+
 var combinations = [];
 
 for (var i in global_objects) { 
     var attrs = global_objects[i];
+    var key = i.toLowerCase();
     for (var idx in attrs) {
         var val = attrs[idx];
         var seo_string = ["JS ",i," ",val,", JavaScript ", i, " ", val];
@@ -25,7 +28,12 @@ for (var i in global_objects) {
         }
         
         seo_string.join("").split(",").forEach(function(elem, idx) {
-          combinations.push([elem.trim(), "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/"+i]);
+          var arg = [elem.trim(), "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/"+i]
+          combinations.push(arg);
+          if (typeof api_targets[key] === 'undefined' ) {
+            api_targets[key] = [];
+          }
+          api_targets[key].push(arg);
         });
     }
 }
@@ -49,6 +57,7 @@ combinations.push(["jQuery, jQuery Fundamantals, JS Fundamentals, JS jQuery, Lea
 
 var pub = __dirname + '/public';
 var app = express.createServer(
+    express.bodyDecoder(),
     express.staticProvider(pub)
 );
 
@@ -62,6 +71,12 @@ var reference_options = ["JavaScript Reference", "JavaScript Guide", "JavaScript
 
 
 app.get("/plz.json", function (req, res) {
+  if (req.query && req.query.key && api_targets[req.query.key.toLowerCase()]) {
+    var array = api_targets[req.query.key.toLowerCase()];
+    var combo = array[Math.floor(Math.random()*array.length)];
+    alt_string = combo[0];
+    href_string = combo[1];
+  } else {
     var alt_string = tutorial_options[Math.floor(Math.random()*tutorial_options.length)];
     var href_string = "https://developer.mozilla.org/en/JavaScript/Guide";
     if (counter % 10 == 0) {
@@ -72,9 +87,11 @@ app.get("/plz.json", function (req, res) {
         alt_string = combo[0];
         href_string = combo[1];
     }
-    var img = images[Math.floor(Math.random()*images.length)];
-    res.writeHead(200, {"Content-Type": "application/json"});
-    res.send(JSON.stringify({alt: alt_string, href: href_string, src: img[0], height: img[1], width: img[2]}));
+  }
+  var img = images[Math.floor(Math.random()*images.length)];
+  res.header("Content-Type", "application/json");
+  // res.send("ok");
+  res.send({alt: alt_string, href: href_string, src: img[0], height: img[1], width: img[2]});
 })
 
 app.get('/', function(req, res){
@@ -106,3 +123,4 @@ app.get('/', function(req, res){
 });
 
 app.listen(process.env.NODE_PORT || 80);
+// 
