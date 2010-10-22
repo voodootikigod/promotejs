@@ -74,7 +74,7 @@ app.get("/plz.json", function (req, res) {
     }
     var img = images[Math.floor(Math.random()*images.length)];
     res.writeHead(200, {"Content-Type": "application/json"});
-    res.sendBody(JSON.stringify({alt: alt_string, href: href_string, src: img[0], height: img[1], width: img[2]}));
+    res.send(JSON.stringify({alt: alt_string, href: href_string, src: img[0], height: img[1], width: img[2]}));
 })
 
 app.get('/', function(req, res){
