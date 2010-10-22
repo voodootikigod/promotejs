@@ -69,8 +69,7 @@ var counter = 0;
 var tutorial_options = ["JS Tutorial", "JavaScript Tutorial", "JavaScript Guide", "Learn JavaScript JS", "How To Learn JS", "Learning JavaScript"];
 var reference_options = ["JavaScript Reference", "JavaScript Guide", "JavaScript API", "JS API", "JS Guide", "JS Reference", "Learn JS", "JS Documentation"];
 
-
-app.get("/plz.json", function (req, res) {
+var data_feed = function (req, res) {
   if (req.query && req.query.key && api_targets[req.query.key.toLowerCase()]) {
     var array = api_targets[req.query.key.toLowerCase()];
     var combo = array[Math.floor(Math.random()*array.length)];
@@ -92,7 +91,9 @@ app.get("/plz.json", function (req, res) {
   res.header("Content-Type", "application/json");
   // res.send("ok");
   res.send({alt: alt_string, href: href_string, src: img[0], height: img[1], width: img[2]});
-})
+};
+app.get("/plz.json", data_feed)
+app.get("/plz", data_feed)
 
 app.get('/', function(req, res){
     counter += 1;
